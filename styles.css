@@ -1,0 +1,23 @@
+#body {
+  background-color: #139181;
+  display: flex;
+  justify-content: center;
+}
+#gameCont {
+  max-width: 980px;
+  max-height: 630px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#btn {
+  width: 200px;
+  align-self: center;
+}
+
+#icon {
+  position: absolute;
+  left: 435px;
+  top: 439px;
+}

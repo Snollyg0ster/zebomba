@@ -1,9 +1,10 @@
 let a = 0;
 
 function makeStep() {
-  if (a < 10) {
+  if (a < 11) {
     var style = document.createElement("style");
     style.type = "text/css";
+    style.id = a;
     var keyFrames = `\
 @-webkit-keyframes d${a} {\
   33% {\
@@ -24,10 +25,14 @@ function makeStep() {
     icon.style.animation = `d${a} 1s linear`;
     icon.appendChild(style);
     icon.addEventListener("animationend", () => {
-      let dot = `left: ${steps[a].dots[2].x}px; top: ${steps[a].dots[2].y}px;`;
-      icon.style = dot;
-      icon.style.removeProperty("animation");
-      a++;
+      if (document.getElementById(`${a}`)) {
+        let dot = `left: ${steps[a].dots[2].x}px; top: ${steps[a].dots[2].y}px;`;
+        icon.style = dot;
+        icon.style.removeProperty("animation");
+        styl = document.getElementById(`${a}`);
+        styl.parentNode.removeChild(styl);
+        a++;
+      }
     });
   }
 }
@@ -56,58 +61,58 @@ const steps = [
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 151, y: 465 },
+      { x: 129, y: 457 },
+      { x: 101, y: 442 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 78, y: 425 },
+      { x: 86, y: 399 },
+      { x: 113, y: 376 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 103, y: 357 },
+      { x: 109, y: 337 },
+      { x: 131, y: 321 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 156, y: 309 },
+      { x: 179, y: 297 },
+      { x: 204, y: 284 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 226, y: 257 },
+      { x: 197, y: 233 },
+      { x: 166, y: 213 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 136, y: 196 },
+      { x: 111, y: 175 },
+      { x: 129, y: 161 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 151, y: 147 },
+      { x: 151, y: 113 },
+      { x: 191, y: 129 },
     ],
   },
   {
     dots: [
-      { x: 319, y: 422 },
-      { x: 290, y: 437 },
-      { x: 265, y: 450 },
+      { x: 207, y: 154 },
+      { x: 221, y: 167 },
+      { x: 242, y: 178 },
     ],
   },
 ];

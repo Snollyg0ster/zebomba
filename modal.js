@@ -1,13 +1,18 @@
 const modalWin = () => {
   const modalCont = document.getElementById("modalCont");
   modalCont.style = "height: 100%;"; //растягивание контейнера на весь экран
-  let rate =
-    '<div id="tabletitle">\
-       <img src="./images/title.png" id="titleimg">\
-       <text id="place">Место</text>\
-       <text id="name">Имя Фамилия</text>\
-       <text id="exp">Опыт</text></div>\
-     <div id="people"></div>';
+  let rate = `<div id="tabletitle">\
+       <img src="./images/title.png">\
+       <div id="titlewords">\
+         <div id="zone1">\
+         <text id="ratetext">Место</text>\
+         </div>\
+         <div id="zone2">\
+         <text id="ratetext">Имя Фамилия</text>\
+         </div>\
+         <text id="ratetext">Опыт</text></div>\
+       </div>\
+       <div id="people">${sortAndGive()}</div>`;
   let exitButton =
     '<img src="./images/exitbutton.png" width="26" height="26" id="exitBut"/ onclick="modalWinClose()">';
   modalCont.innerHTML = `<div id="modalBack"></div>\
@@ -45,6 +50,31 @@ const modalWinClose = () => {
     win.removeEventListener("animationend", deleteItems);
   };
   win.addEventListener("animationend", deleteItems);
+};
+
+const sortAndGive = () => {
+  function maxToLow(a, b) {
+    return b.points - a.points;
+  }
+  const sortArr = data.rating.sort(maxToLow);
+  const result = sortArr.map((item, i) => {
+    let friend = data.friends.some(
+      (elem) => item.name + item.lastName == elem.name + elem.lastName
+    );
+    return `<div id="item">\
+        <div id="itemwords">\
+        <div id="zone1">\
+         <text id="ratetext">${i + 1}</text>\
+         </div>\
+         <div id="zone2">\
+         <text id="${friend ? "ratetextfriend" : "ratetext"}">${item.name} ${
+      item.lastName
+    }</text>\
+         </div>\
+          <text id="ratetext">${item.points}</text></div>\
+        </div>`;
+  });
+  return result.join("");
 };
 
 const data = {

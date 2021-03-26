@@ -21,3 +21,12 @@
   left: 435px;
   top: 439px;
 }
+
+#navigationCont {
+  position: absolute;
+  left: 7px;
+  top: 549px;
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+}

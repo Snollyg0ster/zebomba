@@ -4,22 +4,61 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <title> </title>
-    <script src="main.js"></script>
+    <script src="path.js"></script>
+    <script src="friends.js"></script>
+    <script src="modal.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <style></style>
   </head>
 
-  <body id="body">
+  <body>
     <div id="gameCont">
       <img src="./images/Карта.png" />
       <img src="./images/иконка.png" id="icon" />
       <div id="navigationCont">
-        <div><img src="./images/friends.png" id="friendsBack" /></div>
-        <div><img src="./images/chat.png" /></div>
-        <div onclick="makeStep()"><img src="./images/inuniver.png" /></div>
-        <div><img src="./images/message.png" /></div>
-        <div><img src="./images/rate.png" id="rate" /></div>
+        <div id="myFriends">
+          <img src="./images/friends.png" id="friendsBack" />
+          <div id="topContent">
+            <img
+              src="./images/left.png"
+              width="14"
+              height="27"
+              id="left"
+              onclick="moveItems()"
+            />
+            <img src="./images/addfriend.png" width="56" height="58" id="add" />
+            <div id="friendsOverflow">
+              <div id="friendsItems">
+                <img src="./images/empty.png" width="50" height="51" />
+                <img src="./images/friend.png" width="50" height="51" />
+                <img src="./images/friend.png" width="50" height="51" />
+                <img src="./images/friend.png" width="50" height="51" />
+                <img src="./images/friend.png" width="50" height="51" />
+                <img src="./images/friend.png" width="50" height="51" />
+                <img src="./images/empty.png" width="50" height="51" />
+                <img src="./images/empty.png" width="50" height="51" />
+                <img src="./images/friend.png" width="50" height="51" />
+              </div>
+            </div>
+            <img
+              src="./images/right.png"
+              width="14"
+              height="27"
+              id="right"
+              onclick="moveItems(true)"
+            />
+          </div>
+        </div>
+        <div><img src="./images/chat.png" id="chat" /></div>
+        <div onclick="makeStep()">
+          <img src="./images/inuniver.png" id="univer" />
+        </div>
+        <div><img src="./images/message.png" id="message" /></div>
+        <div>
+          <img src="./images/rate.png" id="rate" onclick="modalWin()" />
+        </div>
       </div>
     </div>
+    <div id="modalCont"></div>
   </body>
 </html>

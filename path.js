@@ -22,7 +22,7 @@ function makeStep() {
 }`;
     style.innerHTML = keyFrames;
     icon = document.getElementById("icon");
-    icon.style.animation = `d${a} 1s linear`;
+    icon.style.animation = `d${a} 0.7s linear`;
     icon.appendChild(style);
     icon.addEventListener("animationend", () => {
       if (document.getElementById(`${a}`)) {

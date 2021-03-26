@@ -1,7 +1,15 @@
-#body {
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   background-color: #139181;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 #gameCont {
   max-width: 980px;
@@ -29,4 +37,203 @@
   width: 960px;
   display: flex;
   justify-content: space-between;
+}
+
+#myFriends {
+  display: flex;
+  justify-content: space-around;
+  width: 536px;
+}
+
+#friendsBack {
+  position: absolute;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#topContent {
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+  align-items: center;
+  width: 536px;
+  height: 63px;
+}
+
+#left {
+  margin-left: 10px;
+}
+
+#right {
+  margin-right: 10px;
+}
+
+@keyframes right {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 120px;
+  }
+}
+
+@keyframes left {
+  from {
+    margin-right: 0;
+  }
+  to {
+    margin-right: 120px;
+  }
+}
+
+#friendsOverflow {
+  width: 414px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#friendsItems {
+  min-width: 534px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat:active,
+#univer:active,
+#message:active,
+#rate:active,
+#left:active,
+#right:active,
+#add:active {
+  filter: brightness(0.8);
+}
+
+#modalCont {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#modalBack {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes transpReduce {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+#winBack1 {
+  position: absolute;
+  width: 523px;
+  height: 455px;
+  background-color: #b97e3e;
+  border-style: solid;
+  border-color: #895d2e;
+  border-width: 5px;
+  border-radius: 16px;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    margin-bottom: 70%;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0;
+  }
+}
+
+#winBack2 {
+  position: absolute;
+  width: 464px;
+  height: 324px;
+  left: 29.5px;
+  top: 95px;
+  background-color: #8c5a31;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#exitBut {
+  position: absolute;
+  left: 480px;
+  top: 14px;
+}
+
+#exitBut:active {
+  filter: brightness(0.8);
+}
+
+#title {
+  position: absolute;
+  left: 129.5px;
+  top: -16px;
+  width: 264px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#titletext {
+  position: absolute;
+  color: white;
+  font-size: 130%;
+  font-weight: 700;
+}
+
+#tabletitle {
+  width: 402px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#people {
+  width: 402px;
+  height: 225px;
+  overflow: hidden;
+}
+
+#titleimg {
+  position: absolute;
+}
+
+#place {
+  margin-left: 16px;
+  width: 82px;
+  color: white;
+  font-weight: 700;
+}
+
+#name {
+  width: 82px;
+  color: white;
+  font-weight: 700;
+}
+
+#exp {
+  width: 82px;
+  color: white;
+  font-weight: 700;
 }
